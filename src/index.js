@@ -2,6 +2,7 @@ import express from "express";
 import { sequelize } from "./database/database.js";
 import routesCatedraticos from "./routes/catedraticos.routes.js";
 import routesControl from './routes/control.routes.js'
+import routesHorario from './routes/horarios.routes.js'
 import "./models/catedraticos.model.js";
 import "./models/horarios.model.js";
 import "./models/control.model.js";
@@ -14,6 +15,8 @@ const app = express();
 app.use(express.json());
 app.use(routesCatedraticos);
 app.use(routesControl);
+app.use(routesHorario);
+
 
 const PORT = process.env.PORT || 4001;
 
