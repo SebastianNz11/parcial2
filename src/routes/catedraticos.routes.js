@@ -5,7 +5,7 @@ import {
   deleteCatedratico,
   postCatedratico,
   putCatedratico
-} from "../controllers/catedraricos.controller";
+} from "../controllers/catedraticos.controller.js";
 
 const routes = Router();
 

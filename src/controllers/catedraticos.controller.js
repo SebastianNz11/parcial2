@@ -1,4 +1,4 @@
-import { Catedratico } from "../models/catedraticos.model";
+import { Catedratico } from "../models/catedraticos.model.js";
 
 // FUNCIÓN PARA TRAER INFORMACIÓN DE TODOS LOS CATEDRÁTICOS
 export const getCatedraticos = async (req, res) => {
