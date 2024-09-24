@@ -1,13 +1,21 @@
 import express from "express";
 import { sequelize } from "./database/database.js";
+import routesCatedraticos from "./routes/catedraticos.routes.js";
+import "./models/catedraticos.model.js";
+import "./models/horarios.model.js";
+import "./models/control.model.js";
+import "./models/logs.model.js";
+import "./models/relaciones.model.js";
 import "dotenv/config";
 const app = express();
+app.use(express.json());
+app.use(routesCatedraticos);
 const PORT = process.env.PORT || 4001;
 
 const main = () => {
   app.listen(PORT, async () => {
     try {
-      await sequelize.authenticate();
+      await sequelize.sync();
       console.log("Conexion exitosa.");
       console.log("Escuchando en el puerto " + PORT);
     } catch (error) {
